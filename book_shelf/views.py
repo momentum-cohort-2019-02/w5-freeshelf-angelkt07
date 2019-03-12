@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from book_shelf.models import Book, BookCategory, BookAuthor, BookShelf
+from django.views import generic
+from django.http import HttpResponseRedirect
+from django.urls import reverse, reverse_lazy
 
 # Create your views here.
 
@@ -10,11 +14,11 @@ def index(request):
     num_author = BookAuthor.ojbects.all().count()
 
 
-    context = [
+    context = {
         'num_book' : num_book,
         'num_category' : num_category,
         'num_author' : num_author,
-    ]
+    }
 
     return render(request, 'index.html', context=context)
 
