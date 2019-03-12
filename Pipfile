@@ -9,6 +9,8 @@ verify_ssl = true
 django = "*"
 pillow = "*"
 django-debug-toolbar = "*"
+autoslug = "*"
+django-autoslug = "*"
 
 [requires]
 python_version = "3.7"
