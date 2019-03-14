@@ -1,4 +1,4 @@
-{% extends 'main_page.html' %}
+{% extends "main_page.html" %}
 
 {% block content %}
 
@@ -14,7 +14,7 @@
     {% endif %}
 {% endif %}
 
-<form method="post" action="{% url 'login' %}">
+<form method="post" action="">
 {% csrf_token %}
 <table>
 
@@ -33,6 +33,6 @@
 <input type="hidden" name="next" value="{{next}}" />
 </form>
 
-<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+<p><a href="">Lost password?</a></p>
 
 {% endblock %}
