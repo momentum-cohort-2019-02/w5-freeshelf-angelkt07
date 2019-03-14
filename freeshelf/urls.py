@@ -27,6 +27,7 @@ urlpatterns = [
 
 urlpatterns += [
     path('book_shelf/', include('book_shelf.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
     path('', RedirectView.as_view(url='/book_shelf/', permanent=True)),
 ]
 

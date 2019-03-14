@@ -1,10 +1,11 @@
 {% extends "main_page.html" %}
+{% load staticfiles %}
 
 {% block content %}
-    <h2>Available Authors</h2>
+    <h2 class="author-list-header">Available Authors</h2>
         <ul>
             {% for author in author_list %}
-                <li>
+                <li class="author-list">
                     <a href="">{{ author.author }}</a>
                 </li>
             {% endfor %}

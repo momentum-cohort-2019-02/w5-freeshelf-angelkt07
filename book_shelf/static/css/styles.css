@@ -1,3 +1,8 @@
+.m-container {
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+}
 
 header {
     display: flex;
@@ -5,10 +10,11 @@ header {
     color: #111111;
 }
 
-.m-container {
-    display: flex;
-    flex-direction: column;
-    /* background-color: blue; */
+.header-link {
+    font-family: 'Cinzel';
+    font-size: 1.20rem;
+    font-weight: 900;
+    text-shadow: -.75px .75px #838989;
 }
 
 .header {
@@ -69,8 +75,11 @@ a.index_books {
     font-family: 'Comfortaa';
     font-size: 1.25rem;
     font-weight: 600;
-    color: #20908C;
+    text-shadow: .75px .75px #98DCD8;
+    color: #138983;
 }
+
+
 
 li {
     list-style-type: none;
@@ -79,13 +88,46 @@ li {
 li.main-page-li {
     font-family: 'Cinzel';
     font-size: 1.20rem;
-    text-overflow: ellipsis;
 }
 
 li.book_index_book {
     font-family: 'Cinzel';  
     font-size: 1.10rem;  
 }
+
+h2.author-list-header {
+    padding-left: 1rem;
+    color: #395D5B;
+    font-family: 'Comfortaa';
+    font-weight: 600;
+}
+
+.author-list {
+    padding-left: 1rem;
+    font-family: 'Comfortaa';
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-shadow: .75px .75px #98DCD8;
+    color: #138983;
+}
+
+h2.category-list-header {
+    padding-left: 1rem;
+    color: #395D5B;
+    font-family: 'Comfortaa';
+    font-weight: 600;
+}
+
+.category-list {
+    padding-left: 4rem;
+    font-family: 'Comfortaa';
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-shadow: .75px .75px #98DCD8;
+    color: #138983;
+}
+
+
 
 
 

@@ -3,7 +3,7 @@
 
 {% block content %}
 <section>
-    <div class="brt-container" style="font-family: 'Kalam';">
+    <div class="brt-container" style="font-family: 'Schoolbell';">
         <p>Welcome to the Book Shelf where you can browse through tons of free stuff to keep your head spinning around programming and all of the different languages available! Good Luck!</p>
 
     </div>
@@ -13,7 +13,7 @@
     <ul>
         {% for book in books %}
             <li class="book_index_book">
-                <a class="index_books" href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
+                <a class="index_books" href="{{ book.get_absolute_url }}">{{ book.title }}</a>{% if book.author %} ({{book.author}}){% endif %}
                 <p style="font-family: 'Quicksand'; font-size: 1rem;">{{book.summary}}</p>
             </li>
             
