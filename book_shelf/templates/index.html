@@ -3,8 +3,8 @@
 
 {% block content %}
 <section>
-    <div class="brt-container">
-        <p>Welcome to the Book Shelf where you can browse through tons of free documentation or books to keep your head spinning around programming and the different languages! Good Luck!</p>
+    <div class="brt-container" style="font-family: 'Kalam';">
+        <p>Welcome to the Book Shelf where you can browse through tons of free stuff to keep your head spinning around programming and all of the different languages available! Good Luck!</p>
 
     </div>
 </section>
@@ -12,9 +12,11 @@
     {% if books %}
     <ul>
         {% for book in books %}
-            <li>
-                <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
+            <li class="book_index_book">
+                <a class="index_books" href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
+                <p style="font-family: 'Quicksand'; font-size: 1rem;">{{book.summary}}</p>
             </li>
+            
         {% endfor %}
     </ul>
     {% else %}

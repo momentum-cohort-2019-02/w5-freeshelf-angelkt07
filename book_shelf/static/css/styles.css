@@ -2,6 +2,7 @@
 header {
     display: flex;
     flex-direction: row;
+    color: #111111;
 }
 
 .m-container {
@@ -11,7 +12,7 @@ header {
 }
 
 .header {
-    background-color: #900C3F;
+    background-color: #FF725C;
     padding: 1rem;
 }
 
@@ -35,7 +36,13 @@ header {
 }
 
 .bl-container {
+    height: auto;
     width: 15%;
+    background:
+        linear-gradient(
+            rgba(255, 198, 189, 0.75), 
+            rgba(255, 255, 255, 0.25));
+    background-size: cover;
     /* background-color: purple; */
 }
 
@@ -49,8 +56,42 @@ header {
 
 .brt-container {
     padding: 1rem;
+    font-size: 1.5rem;
     /* background-color: aqua; */
 }
+
+a {
+    text-decoration: none;
+    color: #4C7976;
+}
+
+a.index_books {
+    font-family: 'Comfortaa';
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #20908C;
+}
+
+li {
+    list-style-type: none;
+}
+
+li.main-page-li {
+    font-family: 'Cinzel';
+    font-size: 1.20rem;
+    text-overflow: ellipsis;
+}
+
+li.book_index_book {
+    font-family: 'Cinzel';  
+    font-size: 1.10rem;  
+}
+
+
+
+
+
+
 
 
 
