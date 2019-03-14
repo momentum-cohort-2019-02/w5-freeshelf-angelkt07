@@ -1,0 +1,10 @@
+{% extends "main_page.html" %}
+
+{% block content %}
+<h2 style="margin-bottom: 5px">Title: {{ book.title }}</h2>
+<h3>Author: {{ book.author }}</h3>
+
+<p>{% for author in book.author.all %} {{ book.author }} {% if not forloop.last %}{% endif %}{% endfor %}</p>
+
+
+{% endblock %}

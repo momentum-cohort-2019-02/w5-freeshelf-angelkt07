@@ -1,0 +1,25 @@
+{% extends "main_page.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<section>
+    <div class="brt-container">
+        <p>Welcome to the Book Shelf where you can browse through tons of free documentation or books to keep your head spinning around programming and the different languages! Good Luck!</p>
+
+    </div>
+</section>
+<section>
+    {% if books %}
+    <ul>
+        {% for book in books %}
+            <li>
+                <a href="{{ book.get_absolute_url }}">{{ book.title }}</a> ({{book.author}})
+            </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+        <p>There are no books at this time.</p>
+    {% endif %}
+
+</section>
+{% endblock %}

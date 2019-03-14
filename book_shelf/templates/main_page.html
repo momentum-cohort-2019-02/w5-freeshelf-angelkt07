@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    {% block title %}<title>Book Shelf</title>{% endblock %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+   
+
+</head>
+
+<body>
+    <div class="m-container">
+        <header class="header">
+            <div class="t-l-container">
+                <h1>Book Shelf</h1>
+            </div>
+            <div class="t-r-container" style="text-align: right; margin-top: 30px;">
+                <a href="">Login</a>/<a href="">Logout</a>
+                {% if user.is_authenticated %}
+                <a href="">Get Name Eventually</a>
+                {% endif %}
+            </div>
+        </header>
+        {% block sidebar %}
+        <div class="b-container">
+            <div class="bl-container">
+                <div class="row2">
+                    <div class="col-sm-2">
+                        <ul>
+                            <li><a href="{% url 'index' %}"><strong>Books </strong></a></li>
+                            <li><a href="{% url 'categories' %}"><strong>Categories </strong></a></li>
+                            <li><a href="{% url 'authors' %}"><strong>Author </strong></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <hr />
+                <div class="row3">
+                    <div class="col-sm-2">
+                        <ul class="sidelist">
+                            {% if user.is_authenticated %}
+                            <li>My Favorites <a href="">Get Favorites Eventually</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+
+            <div class="br-container">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+<!-- Copy of what I was originally trying to do, but had issues with the numbers rolling over. I think it has something to do with the rendering of the page, but stopping for now to work on something else. -->
+<!-- <li><strong>Books </strong><a href="{% url 'index' %}">({{num_book}})</a></li>
+<li><strong>Categories </strong><a href="{% url 'categories' %}">({{num_category}})</a></li>
+<li><strong>Author </strong><a href=""> ({{num_author}})</a></li> -->

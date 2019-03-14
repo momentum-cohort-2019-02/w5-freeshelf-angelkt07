@@ -1,5 +1,5 @@
 from django.contrib import admin
-from book_shelf.models import Book, BookCategory
+from book_shelf.models import Book, Category, Author
 
 # Register your models here.
 
@@ -8,4 +8,5 @@ class BookAdmin(admin.ModelAdmin):
     list_display = ('title', 'author', 'summary', 'book_url', 'picture', 'slug')
   
 
-admin.site.register(BookCategory)
+admin.site.register(Category)
+admin.site.register(Author)

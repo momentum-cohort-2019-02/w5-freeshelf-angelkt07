@@ -1,0 +1,54 @@
+header {
+    display: flex;
+    flex-direction: row;
+}
+
+.m-container {
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+}
+
+.header {
+    background-color: #900C3F;
+    padding: 1rem;
+}
+
+.t-l-container {
+    width: 75%;
+    padding: .5rem;
+    /* background-color: yellow; */
+}
+
+.t-r-container {
+    width: 25%;
+    padding: .5rem;
+    /* background-color: yellow; */
+}
+
+.b-container {
+    display: flex;
+    flex-direction: row;
+    height: 80%;
+    /* background-color: aqua; */
+}
+
+.bl-container {
+    width: 15%;
+    /* background-color: purple; */
+}
+
+.br-container {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+    padding: 1rem;
+    /* background-color: orange; */
+}
+
+.brt-container {
+    padding: 1rem;
+    /* background-color: aqua; */
+}
+
+
