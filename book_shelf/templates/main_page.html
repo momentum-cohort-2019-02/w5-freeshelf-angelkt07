@@ -1,3 +1,5 @@
+{% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 
@@ -6,10 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     {% block title %}<title>Book Shelf</title>{% endblock %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-   
-
+    <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
 </head>
 
 <body>
@@ -31,7 +31,7 @@
                 <div class="row2">
                     <div class="col-sm-2">
                         <ul>
-                            <li><a href="{% url 'index' %}"><strong>Books </strong></a></li>
+                            <li><a style="text-decoration: none;" href="{% url 'index' %}"><strong>Books </strong></a></li>
                             <li><a href="{% url 'categories' %}"><strong>Categories </strong></a></li>
                             <li><a href="{% url 'authors' %}"><strong>Author </strong></a></li>
                         </ul>

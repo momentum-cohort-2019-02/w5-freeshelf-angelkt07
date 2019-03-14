@@ -4,7 +4,9 @@
 <h2 style="margin-bottom: 5px">Title: {{ book.title }}</h2>
 <h3>Author: {{ book.author }}</h3>
 
-<p>{% for author in book.author.all %} {{ book.author }} {% if not forloop.last %}{% endif %}{% endfor %}</p>
+<p><a href="">{{ book.url }} {% for detail in book.category_set.all %}({{detail.name}}){% endfor %}</a>
+
+
 
 
 {% endblock %}
