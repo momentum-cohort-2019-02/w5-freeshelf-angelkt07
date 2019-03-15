@@ -13,29 +13,30 @@ def load_book_data(apps, schema_editor):
     datapath = os.path.join(settings.BASE_DIR, 'uploads')
     datafile = os.path.join(datapath, 'list_of_books.csv')
 
-    with open(datafile) as file:
+    Book.objects.all().delete()
+    Category.objects.all().delete()
+    Author.objects.all().delete()
+    with open(datafile, encoding = "ISO-8859-1") as file:
         reader = csv.DictReader(file)
 
         for row in reader:
             if row['category']:
-                category, _ = Category.objects.get_or_create(name=row['category'])
+                category, _ = Category.objects.get_or_create(category=row['category'])
 
             if row['author']:
-                author, _ = Author.objects.get_or_create(name=row['author'])
+                author, _ = Author.objects.get_or_create(author=row['author'])
 
             book = Book(
                 title = row['title'],
                 summary = row['summary'],
                 book_url = row['book_url'],
+                author=author,
             )
 
             book.save()
 
-            book.author.add(author)
             book.category.add(category)
 
-            book.save()
-            
 class Migration(migrations.Migration):
 
     dependencies = [

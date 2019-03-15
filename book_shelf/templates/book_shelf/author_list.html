@@ -2,13 +2,13 @@
 {% load staticfiles %}
 
 {% block content %}
-    <h2 class="author-list-header">Available Authors</h2>
-        <ul>
-            {% for author in author_list %}
-                <li class="author-list">
-                    <a href="">{{ author.author }}</a>
-                </li>
-            {% endfor %}
-        </ul>
+    <h2 class="author-list-header tc mb3">Available Authors</h2>
+    <div class="flex flex-wrap justify-center ma2">
+        {% for author in author_list %}
+            <div class="author-border grow dib f3-ns br4 w-75 ma2 pa3 ba tc shadow-1" style="border-color: #055550;">
+                <a class="author-list tc" href="">{{ author.author }}</a>
+            </div>
+        {% endfor %}
+    </div>
 
 {% endblock %}

@@ -12,9 +12,9 @@
     {% if books %}
     <ul>
         {% for book in books %}
-            <li class="book_index_book">
+            <li class="book_index_book grow dib br3 ma2 pa3">
                 <a class="index_books" href="{{ book.get_absolute_url }}">{{ book.title }}</a>{% if book.author %} ({{book.author}}){% endif %}
-                <p style="font-family: 'Quicksand'; font-size: 1rem;">{{book.summary}}</p>
+                <p style="font-family: 'Quicksand'; font-size: 1rem;">{{book.summary|truncatewords:50}}</p>
             </li>
             
         {% endfor %}
