@@ -123,6 +123,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+MEDIA_DIR = os.path.join(BASE_DIR, 'uploads')
+
+MEDIA_URL = '/media/'
+
 LOGIN_REDIRECT_URL = '/'
 
 INTERNAL_IPS = [

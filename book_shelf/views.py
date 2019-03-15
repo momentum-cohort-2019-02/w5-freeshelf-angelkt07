@@ -1,5 +1,4 @@
 import datetime
-
 from django.shortcuts import render
 from book_shelf.models import Book, Category, Author
 from django.views import generic

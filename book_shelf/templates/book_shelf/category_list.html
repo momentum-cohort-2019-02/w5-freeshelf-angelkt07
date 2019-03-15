@@ -1,16 +1,14 @@
 {% extends "main_page.html" %}
 
 {% block content %}
-<section>
-    <h2 class="category-list-header mb4">List of Categories</h2>
+<h2 class="category-list-header mb4">List of Categories</h2>
 
-        <ul class="category-list ma2">
-            {% for category in category_list %}
-                <li>
-                    <a href="">{{category.category}}</a>
-                </li>
-            {% endfor %}
-        </ul>
-</section>
+    <ul class="category-list ma2" style="font-size: 1.30rem;">
+        {% for category in category_list %}
+            <li>
+                <a href="">{{category.category}}</a>
+            </li>
+        {% endfor %}
+    </ul>
 
 {% endblock %}

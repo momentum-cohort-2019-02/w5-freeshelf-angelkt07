@@ -3,36 +3,36 @@
 {% block content %}
 
 {% if form.errors %}
-    <p>Your username and password didn't match. Please try again.</p>
+    <p style="font-family: 'Quicksand'">Your username and password didn't match. Please try again.</p>
 {% endif %}
 
 {% if next %}
     {% if user.is_authenticated %}
-        <p>Your account doesn't have access to this page. To proceed, please log in with an account that has access.</p>
+        <p style="font-family: 'Quicksand'">Your account doesn't have access to this page. To proceed, please log in with an account that has access.</p>
     {% else %}
-        <p>Please log in to see this page.</p>
+        <p style="font-family: 'Quicksand'">Please log in to see this page.</p>
     {% endif %}
 {% endif %}
 
 <form method="post" action="">
 {% csrf_token %}
-<table>
+<table class="ma3">
 
 <tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
+    <td style="font-family: 'Quicksand'">{{ form.username.label_tag }}</td>
+    <td style="font-family: 'Quicksand'">{{ form.username }}</td>
 </tr>
 
 <tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
+    <td style="font-family: 'Quicksand'">{{ form.password.label_tag }}</td>
+    <td style="font-family: 'Quicksand'">{{ form.password }}</td>
 </tr>
 </table> 
 
-<input type="submit" value="login" />
+<input class="ma2" style="font-family: 'Quicksand'" type="submit" value="LOGIN" />
 <input type="hidden" name="next" value="{{next}}" />
 </form>
 
-<p><a href="">Lost password?</a></p>
+<p style="font-family: 'Quicksand'"><a href="">Lost password?</a></p>
 
 {% endblock %}
