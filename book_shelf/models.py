@@ -19,7 +19,7 @@ class Book(models.Model):
         ordering = ['-date_added']
 
     def display_category(self):
-        return ', '.join(category.name for category in self.category.all()[:3])
+        return ', '.join(category.category for category in self.category.all()[:3])
 
     def __str__(self):
         """ string to return self.title"""
@@ -34,7 +34,7 @@ class Category(models.Model):
     category = models.CharField(max_length=100)
 
     def __str__(self):
-        return self.name
+        return self.category
 
 class Author(models.Model): 
     """Book Author"""

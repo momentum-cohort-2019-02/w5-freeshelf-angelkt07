@@ -19,7 +19,7 @@ from django.urls import include
 from django.conf import settings
 from django.views.generic import RedirectView
 from django.conf.urls.static import static
-from django.conf.urls import include
+from django.conf.urls import include, url
 
 
 urlpatterns = [
@@ -29,6 +29,7 @@ urlpatterns = [
 urlpatterns += [
     path('', RedirectView.as_view(url='/book_shelf/', permanent=True)),
     path('book_shelf/', include('book_shelf.urls')),
+    path('accounts/', include('registration.backends.default.urls')),
     path('accounts/', include('django.contrib.auth.urls')),
 ]
 

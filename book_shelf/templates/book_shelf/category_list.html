@@ -1,10 +1,10 @@
-{% extends "main_page.html" %}
+{% extends "base.html" %}
 {% load staticfiles %}
 
 {% block content %}
 <h2 class="category-list-header tc mb3">List of Categories</h2>
 
-    <div class="flex flex-wrap justify-center ma2 pa3"> 
+    <div class="flex flex-wrap justify-center ma2"> 
         {% for category in category_list %}
             <div class="author-border grow dib f3 br4 w-75 ma2 pa3 ba tc shadow-1" style="border-color: #055550;">
                 <a class="category-list" href="">{{category.category}}</a>

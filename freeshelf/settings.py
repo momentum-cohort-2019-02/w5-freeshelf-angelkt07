@@ -12,9 +12,12 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 
 import os
 import django_heroku
+from django.contrib.messages import constants as messages
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
+MEDIA_URL = '/media/'
 
 
 # Quick-start development settings - unsuitable for production
@@ -39,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'book_shelf',
+    'registration',
     'debug_toolbar',
 ]
 
@@ -123,15 +127,15 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_DIR = os.path.join(BASE_DIR, 'uploads')
-
-MEDIA_URL = '/media/'
-
-LOGIN_REDIRECT_URL = '/'
-
 INTERNAL_IPS = [
     '127.0.0.1',
 ]
+
+#registration
+ACCOUNT_ACTIVATION_DAYS = 7
+LOGIN_REDIRECT_URL = '/'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 
 #must be at the bottom of the file.
 django_heroku.settings(locals())

@@ -1,4 +1,4 @@
-{% extends "main_page.html" %}
+{% extends "base.html" %}
 
 {% block content %}
 
@@ -33,6 +33,6 @@
 <input type="hidden" name="next" value="{{next}}" />
 </form>
 
-<p style="font-family: 'Quicksand'"><a href="">Lost password?</a></p>
+<p style="font-family: 'Quicksand'"><a href="{% url 'password_reset' %}">Lost password?</a></p>
 
 {% endblock %}
