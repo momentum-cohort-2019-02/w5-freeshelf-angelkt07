@@ -6,7 +6,7 @@
     <div class="flex flex-wrap justify-center ma2">
         {% for author in author_list %}
             <div class="author-border grow dib f3-ns br4 w-75 ma2 pa3 ba tc shadow-1" style="border-color: #055550;">
-                <a class="author-list tc" href="">{{ author.author }}</a>
+                <a class="author-list tc" href="{% url 'author-detail' author.pk %}">{{ author.author }}</a>
             </div>
         {% endfor %}
     </div>

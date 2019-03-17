@@ -44,4 +44,47 @@ class CategoryDetailView(generic.DetailView):
 class AuthorListView(generic.ListView):
     model = Author
 
+class AuthorDetailView(generic.DetailView):
+    model = Author
+
+class BookCreate(CreateView):
+    model = Book
+    fields = ('title', 'author', 'category', 'summary', 'book_url', 'picture')
+
+class AuthorCreate(CreateView):
+    model = Author
+    fields = '__all__'
+    success_url = reverse_lazy('authors')
+
+class CategoryCreate(CreateView):
+    model = Category
+    fields = '__all__'
+    success_url = reverse_lazy('categories')
+
+class BookUpdate(UpdateView):
+    model = Book
+    fields = ('title', 'author', 'category', 'summary', 'book_url', 'picture')
+
+class AuthorUpdate(UpdateView):
+    model = Author
+    fields = '__all__'
+
+class CategoryUpdate(UpdateView):
+    model = Category
+    fields = '__all__'
+
+class BookDelete(DeleteView):
+    model = Book
+    success_url = reverse_lazy('index')
+
+class AuthorDelete(DeleteView):
+    model = Author
+    success_url = reverse_lazy('authors')
+
+class CategoryDelete(DeleteView):
+    model = Category
+    success_url = reverse_lazy('categories')
+
+
+
 

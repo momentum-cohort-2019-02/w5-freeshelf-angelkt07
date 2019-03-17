@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<form style="font-family: 'Quicksand'; font-size: 1rem;">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit" style="font-family: 'Quicksand'; font-size: 1rem;">
+</form>
+{% endblock %}

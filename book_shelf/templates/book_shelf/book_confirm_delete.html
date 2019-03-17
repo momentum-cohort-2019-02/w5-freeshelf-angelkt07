@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3 style="font-family: 'Quicksand'; margin-bottom: 0px;">Delete Book</h3>
+
+<p style="font-family: 'Quicksand'">Are you sure you want to delete {{book.title}}?</p>
+
+<form action="" method="POST" style="font-family: 'Quicksand'">
+    {% csrf_token %}
+    <input type="submit" value="Yes, delete." style="font-family: 'Quicksand'">
+</form>
+
+{% endblock %}

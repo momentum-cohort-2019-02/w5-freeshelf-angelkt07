@@ -11,7 +11,6 @@
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     <link rel="stylesheet" href="https://unpkg.com/tachyons@4.10.0/css/tachyons.min.css"/>
     <link href="https://fonts.googleapis.com/css?family=Courgette|Indie+Flower|Schoolbell|Kaushan+Script|Permanent+Marker|Comfortaa|Cinzel|Quicksand|Poiret+One" rel="stylesheet">
-    {% block meta %}{% endblock %}
 </head>
 
 <body>
@@ -52,6 +51,18 @@
                         </ul>
                     </div>
                 </div>
+                {% if user.is_staff %}
+                <hr />
+                <div class="row4">
+                    <div class="col-sm-2">
+                        <ul class="sidelist">
+                            {% if perms.can_add_book %}
+                            <li class="main-page-li" ><a href="{% url 'book_create' %}">Add Book</a></li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+                {% endif %}
             </div>
             {% endblock %}
 

@@ -6,7 +6,15 @@
 <h3 class="ml4" style="font-family: 'Comfortaa'; font-size: 1.10rem; "><a href="">{% if book.author %}{{book.author}}{% endif %}</a></h3>
 
 
+
 <p class="ml4 near-black" style="font-family: 'Quicksand'">{{book.summary}}</p>
+
+<div class="ml4">
+    {% if perms.can_add_book %}
+    <button type="button" value="Edit Book"><a href="{% url 'book_update' book.slug %}">Edit Book</a></button>
+    <button type="button" value="Delete Book"><a href="{% url 'book_delete' book.slug %}">Delete Book</a></button>
+    {% endif %}
+</div>
 
 
 

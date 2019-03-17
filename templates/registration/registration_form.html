@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
 {% block content %}
-<p>Register your account.</p>
-    <form action="" method="post">
+<p style="font-family: 'Quicksand'; font-size: 1rem;">Register your account.</p>
+    <form action="" method="post" style="font-family: 'Quicksand'; font-size: 1rem;">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Submit" />
+    <input type="submit" value="Submit" style="font-family: 'Quicksand'; font-size: 1rem;"/>
     </form>
 
 {% endblock %}

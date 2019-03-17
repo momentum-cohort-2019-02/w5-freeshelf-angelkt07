@@ -13,7 +13,7 @@
     <ul>
         {% for book in books %}
             <li class="book_index_book grow dib br3 ma2 pa3">
-                <a class="index_books" href="{{ book.get_absolute_url }}">{{ book.title }}</a>{% if book.author %} ({{book.author}}){% endif %}
+                <a class="index_books" href="{{ book.get_absolute_url }}">{{ book.title }}</a><strong>{% if book.author %} ({{book.author}}){% endif %}</strong>{% for category in book.category.all %} ({{ category }}){% if not forloop.last %}, {% endif %}{% endfor %}   
                 <p style="font-family: 'Quicksand'; font-size: 1rem;">{{book.summary|truncatewords:50}}</p>
             </li>
             

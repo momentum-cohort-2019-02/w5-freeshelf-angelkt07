@@ -22,6 +22,8 @@ def load_book_data(apps, schema_editor):
         for row in reader:
             if row['category']:
                 category, _ = Category.objects.get_or_create(category=row['category'])
+            
+            category.save()
 
             if row['author']:
                 author, _ = Author.objects.get_or_create(author=row['author'])

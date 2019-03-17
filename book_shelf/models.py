@@ -1,8 +1,11 @@
 from django.db import models
 from autoslug import AutoSlugField
 from django.urls import reverse
+from django.contrib.auth import get_user_model
 
 # Create your models here.
+
+User = get_user_model()
 
 class Book(models.Model):
     """Class for my book model"""
@@ -15,11 +18,22 @@ class Book(models.Model):
     date_added = models.DateTimeField(auto_now_add=True)
     picture = models.ImageField(upload_to='book_shelf/', null=True, blank=True)
 
+    favorited_by = models.ManyToManyField(
+        to=User, related_name='favorite_books', through='Favorite'
+    )
+
     class Meta:
         ordering = ['-date_added']
+        permissions = (
+            ("Can_add_book", "Can add a book"),
+            ("Can_change_book", "Can edit a book"),
+            ("Can_delete_book", "Can delete a book"),
+        )
 
     def display_category(self):
         return ', '.join(category.category for category in self.category.all()[:3])
+
+    display_category.short_description = 'Category'
 
     def __str__(self):
         """ string to return self.title"""
@@ -43,6 +57,12 @@ class Author(models.Model):
     def __str__(self):
         return self.author
 
+    def get_absolute_url(self):
+        return reverse('author-detail', args=[str(self.id)])
 
+class Favorite(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    book = models.ForeignKey(Book, on_delete=models.CASCADE)
+    favorited_at = models.DateTimeField(auto_now_add=True)
 
     
