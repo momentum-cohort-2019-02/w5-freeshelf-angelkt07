@@ -2,14 +2,14 @@
 {% load staticfiles %}
 
 {% block content %}
-<h3>{{ author }}</h3>
+<h3 style="font-family: 'Quicksand'">{{ author }}</h3>
 
-<div>
+<div style="font-family: 'Quicksand'">
     {% for book in author.book_set.all %}
 
-    <p><a href="{% url 'book-detail' book.pk %}">{{ book }} {% for detail in book.category_set.all %}({{detail.name}}){% endfor %}</a>
+    <p style="font-family: 'Quicksand'"><a href="{% url 'book-detail' book.pk %}">{{ book }} {% for detail in book.author_set.all %}({{detail.name}}){% endfor %}</a>
     <strong>({% for category in book.category.all %} {{ category }}{% if not forloop.last %}, {% endif %}{% endfor %})</strong></p>
-    <p>{{ book.summary }} {% for category in book.category.all %} {% if not forloop.last %}, {% endif %}{% endfor %}</p>
+    <p>{{ book.summary }}</p>
 
     {% endfor %}
 </div>

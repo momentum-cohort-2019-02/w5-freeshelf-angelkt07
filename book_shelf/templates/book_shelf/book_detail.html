@@ -2,8 +2,8 @@
 {% load staticfiles %}
 
 {% block content %}
-<h2 class="ma1" style="font-family: 'Cinzel';">{{ book.title }}</h2>
-<h3 class="ml4" style="font-family: 'Comfortaa'; font-size: 1.10rem; "><a href="">{% if book.author %}{{book.author}}{% endif %}</a></h3>
+<h2 class="ma1" style="font-family: 'Cinzel';"><a href="{{book.book_url}}">{{ book.title }}</a></h2>
+<h3 class="ml4" style="font-family: 'Comfortaa'; font-size: 1.10rem; "><a href="">{% if book.author %}{{book.author}}{% endif %}</a></h3><a href="" class="ml4" style="font-family: 'Comfortaa'; font-size: 1.10rem; ">({% for category in book.category.all %} {{ category }}{% if not forloop.last %}, {% endif %}{% endfor %})</a>
 
 <p class="ml4 near-black" style="font-family: 'Quicksand'">{{book.summary}}</p>
 
