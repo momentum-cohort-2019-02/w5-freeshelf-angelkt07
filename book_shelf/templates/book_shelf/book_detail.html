@@ -5,8 +5,6 @@
 <h2 class="ma1" style="font-family: 'Cinzel';">{{ book.title }}</h2>
 <h3 class="ml4" style="font-family: 'Comfortaa'; font-size: 1.10rem; "><a href="">{% if book.author %}{{book.author}}{% endif %}</a></h3>
 
-
-
 <p class="ml4 near-black" style="font-family: 'Quicksand'">{{book.summary}}</p>
 
 <div class="ml4">
@@ -15,7 +13,6 @@
     <button type="button" value="Delete Book"><a href="{% url 'book_delete' book.slug %}">Delete Book</a></button>
     {% endif %}
 </div>
-
 
 
 {% endblock %}

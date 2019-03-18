@@ -1,5 +1,5 @@
-from django.urls import path
-from . import views
+from django.urls import path, include
+from book_shelf import views
 
 urlpatterns = [
     path('', views.index, name='index'),
