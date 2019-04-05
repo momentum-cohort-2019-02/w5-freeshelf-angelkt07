@@ -10,8 +10,7 @@ from django.views.decorators.http import require_http_methods
 
 from book_shelf.models import Book, Category, Author
 
-# Create your views here.
-
+# view for index page.
 def index(request):
     """Index view"""
     books = Book.objects.all()
@@ -32,22 +31,26 @@ class BookListView(generic.ListView):
     model = Book
     paginate_by = 10
 
+
+# details view
 class BookDetailView(generic.DetailView):
     model = Book
-    
-class CategoryListView(generic.ListView):
-    model = Category
-    paginate_by = 10
 
 class CategoryDetailView(generic.DetailView):
     model = Category
 
-class AuthorListView(generic.ListView):
-    model = Author
-
 class AuthorDetailView(generic.DetailView):
     model = Author
 
+# list views 
+class CategoryListView(generic.ListView):
+    model = Category
+    paginate_by = 10
+
+class AuthorListView(generic.ListView):
+    model = Author
+
+# create views
 class BookCreate(CreateView):
     model = Book
     fields = ('title', 'author', 'category', 'summary', 'book_url', 'picture')
@@ -62,6 +65,7 @@ class CategoryCreate(CreateView):
     fields = '__all__'
     success_url = reverse_lazy('categories')
 
+# Update views
 class BookUpdate(UpdateView):
     model = Book
     fields = ('title', 'author', 'category', 'summary', 'book_url', 'picture')
@@ -74,6 +78,7 @@ class CategoryUpdate(UpdateView):
     model = Category
     fields = '__all__'
 
+# delete views
 class BookDelete(DeleteView):
     model = Book
     success_url = reverse_lazy('index')
